@@ -1,1 +1,11 @@
-
+index=main source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventID=1 earliest=-21d
+| search process_name IN (arp.exe,chcp.com,ipconfig.exe,net.exe,net1.exe,nltest.exe,ping.exe,systeminfo.exe,whoami.exe)
+    OR (
+        process_name IN (cmd.exe,powershell.exe)
+        AND process IN (*arp*,*chcp*,*ipconfig*,*net*,*net1*,*nltest*,*ping*,*systeminfo*,*whoami*)
+    )
+| stats
+    values(process) as ReconCommands
+    min(_time) as FirstSeen
+    by parent_process parent_process_id dest user
+| where mvcount(ReconCommands) > 3
