@@ -5,8 +5,9 @@ This repository contains detection engineering case studies, threat hunting quer
 
 ## Current Projects
 
-| **Category**  |           **   Project **                           |    **Status **
-| Discovery     | Credential-Based RDP Access → Domain Reconnaissance | Detection Design (Not Yet Validated) |
+| Category | Project | Status |
+|----------|---------|--------|
+| Discovery | Credential-Based RDP Access → Domain Reconnaissance | Detection Design (Not Yet Validated) |   
 
 ## Repository Structure
 
