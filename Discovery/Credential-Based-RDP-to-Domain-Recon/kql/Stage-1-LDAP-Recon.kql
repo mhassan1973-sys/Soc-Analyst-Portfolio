@@ -1,1 +1,11 @@
-
+IdentityDirectoryEvents
+| where Timestamp > ago(21d)
+| where ActionType == "LDAP query"
+| where Query has "samAccountType=805306368"
+| summarize
+    QueryCount = count(),
+    FirstSeen = min(Timestamp),
+    LastSeen = max(Timestamp),
+    Queries = make_set(Query)
+    by AccountName, DeviceName
+| where QueryCount > 10
