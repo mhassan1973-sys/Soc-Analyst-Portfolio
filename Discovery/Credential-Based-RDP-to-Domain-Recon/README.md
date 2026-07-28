@@ -55,3 +55,12 @@ The detection logic in this project is presented for both **Microsoft Defender X
 | Stage 0 – Anomalous RDP Logon | `BehaviorAnalytics`, `DeviceLogonEvents` | Windows Security Event Logs (e.g., Event ID 4624) or equivalent ingested authentication logs | Detects anomalous Remote Desktop logons based on user behavior or authentication events. |
 | Stage 1 – LDAP Reconnaissance | `IdentityDirectoryEvents` (Microsoft Defender for Identity) | SilkETW/SilkService (`Microsoft-Windows-LDAP-Client`) ingested into Splunk | Detects large-scale LDAP enumeration associated with BloodHound or SharpHound. |
 | Stage 2 – Native Binary Reconnaissance | `DeviceProcessEvents` (Microsoft Defender for Endpoint) | Sysmon Event ID 1 (`XmlWinEventLog:Microsoft-Windows-Sysmon/Operational`) | Detects execution of native Windows discovery commands such as `whoami`, `nltest`, and `net`. |
+
+## Detection Logic
+
+The detection is divided into four stages that mirror the attack progression. Each stage targets a different phase of the attack and uses different telemetry sources. Together, these stages provide higher confidence than relying on a single detection in isolation.
+
+- **Stage 0:** UEBA detects an anomalous RDP logon using learned behavioral baselines.
+- **Stage 1:** LDAP enumeration identifies large-scale Active Directory reconnaissance.
+- **Stage 2:** Native Windows discovery commands confirm targeted reconnaissance on the compromised endpoint.
+- **Correlated Hunt:** Correlates LDAP reconnaissance with native discovery activity to identify a multi-stage attack performed by the same account and device.
