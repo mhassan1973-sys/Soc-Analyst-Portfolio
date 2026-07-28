@@ -1,8 +1,0 @@
-index=main source="WinEventLog:SilkService-Log" earliest=-21d
-| spath input=Message
-| rename XmlEventData.* as *
-| table _time ComputerName ProcessName ProcessId DistinguishedName SearchFilter
-| search SearchFilter="*(samAccountType=805306368)*"
-| stats min(_time) as FirstSeen max(_time) as LastSeen count as QueryCount values(SearchFilter) as Queries by ComputerName ProcessName ProcessId
-| where QueryCount > 10
-| convert ctime(FirstSeen) ctime(LastSeen)
