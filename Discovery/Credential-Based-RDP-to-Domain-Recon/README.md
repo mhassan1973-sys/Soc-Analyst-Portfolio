@@ -45,3 +45,13 @@ Approximately two days later, the attacker returns to the compromised workstatio
 This activity occurs during the **Discovery** phase of the MITRE ATT&CK framework and immediately precedes **Lateral Movement**. Detecting the attacker at this stage is significantly less costly than detecting them after they begin moving between systems, as defenders can contain the compromise before additional hosts, privileged accounts, or administrative paths are leveraged.
     
 
+
+## Data Sources / Prerequisites
+
+The detection logic in this project is presented for both **Microsoft Defender XDR/Microsoft Sentinel (KQL)** and **Splunk Enterprise (SPL)**. The following telemetry sources are required to support each stage of the detection.
+
+| Detection Stage | Microsoft Telemetry | Splunk Telemetry | Purpose |
+|-----------------|---------------------|------------------|---------|
+| Stage 0 – Anomalous RDP Logon | `BehaviorAnalytics`, `DeviceLogonEvents` | Windows Security Event Logs (e.g., Event ID 4624) or equivalent ingested authentication logs | Detects anomalous Remote Desktop logons based on user behavior or authentication events. |
+| Stage 1 – LDAP Reconnaissance | `IdentityDirectoryEvents` (Microsoft Defender for Identity) | SilkETW/SilkService (`Microsoft-Windows-LDAP-Client`) ingested into Splunk | Detects large-scale LDAP enumeration associated with BloodHound or SharpHound. |
+| Stage 2 – Native Binary Reconnaissance | `DeviceProcessEvents` (Microsoft Defender for Endpoint) | Sysmon Event ID 1 (`XmlWinEventLog:Microsoft-Windows-Sysmon/Operational`) | Detects execution of native Windows discovery commands such as `whoami`, `nltest`, and `net`. |
