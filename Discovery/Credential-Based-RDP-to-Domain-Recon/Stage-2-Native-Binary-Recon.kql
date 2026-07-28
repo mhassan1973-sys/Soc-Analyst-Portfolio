@@ -1,0 +1,36 @@
+DeviceProcessEvents
+| where Timestamp > ago(21d)
+| where FileName in~ (
+    "arp.exe",
+    "chcp.com",
+    "ipconfig.exe",
+    "net.exe",
+    "net1.exe",
+    "nltest.exe",
+    "ping.exe",
+    "systeminfo.exe",
+    "whoami.exe"
+)
+or (
+    FileName in~ ("cmd.exe","powershell.exe")
+    and ProcessCommandLine has_any (
+        "arp",
+        "chcp",
+        "ipconfig",
+        "net",
+        "net1",
+        "nltest",
+        "ping",
+        "systeminfo",
+        "whoami"
+    )
+)
+| summarize
+    ReconCommands = make_set(FileName),
+    FirstSeen = min(Timestamp)
+    by
+    AccountName,
+    DeviceName,
+    InitiatingProcessFileName,
+    InitiatingProcessId
+| where array_length(ReconCommands) > 3
