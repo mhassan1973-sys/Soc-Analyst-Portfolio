@@ -8,16 +8,6 @@ This repository contains detection engineering case studies, threat hunting quer
 | Category | Project | Status |
 |----------|---------|--------|
 | Discovery | Credential-Based RDP Access → Domain Reconnaissance | Detection Design (Not Yet Validated) |   
+|Reconnaissance Persistence Privilege Escalation Defense Evasion Credential Access Lateral Movement Command and Control | FalconEye — End-to-End Windows Intrusion Investigation | Completed Investigation
 
-## Repository Structure
-
-```
-Discovery/
-Credential-Access/
-Execution/
-Persistence/
-Lateral-Movement/
-```
-
-> Each project includes the attack scenario, detection logic, investigation workflow, MITRE ATT&CK mapping, and future validation plans.
   
