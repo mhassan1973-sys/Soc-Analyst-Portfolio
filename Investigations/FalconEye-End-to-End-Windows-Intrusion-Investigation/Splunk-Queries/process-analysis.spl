@@ -1,0 +1,3 @@
+index="folks" host=CLIENT02 EventCode=1
+| table _time Image CommandLine ParentImage User SHA256
+| sort 0 _time

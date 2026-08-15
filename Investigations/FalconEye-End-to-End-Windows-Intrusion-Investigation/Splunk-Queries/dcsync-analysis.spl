@@ -1,0 +1,4 @@
+index="folks" host=CLIENT02 EventCode=1
+| search CommandLine="*dcsync*" OR CommandLine="*lsadump*"
+| table _time Image CommandLine ParentImage User SHA256
+| sort 0 _time

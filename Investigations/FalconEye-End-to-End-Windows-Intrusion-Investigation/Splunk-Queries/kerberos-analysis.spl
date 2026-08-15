@@ -1,0 +1,3 @@
+index="folks" host=CLIENT02 (EventCode=4768 OR EventCode=4769)
+| table _time EventCode Account_Name TargetUserName ServiceName Ticket_Encryption_Type IpAddress
+| sort 0 _time

@@ -1,0 +1,4 @@
+index="folks" host=CLIENT02
+| search "sc" "create"
+| table _time process
+| sort 0 _time

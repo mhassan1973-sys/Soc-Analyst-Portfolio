@@ -1,0 +1,4 @@
+index="folks" host=CLIENT03 EventCode=4624
+| search Logon_Type=3 OR Logon_Type=10
+| table _time TargetUserName Logon_Type IpAddress AuthenticationPackageName
+| sort 0 _time
