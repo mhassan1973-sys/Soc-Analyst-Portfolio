@@ -164,5 +164,8 @@ Remote Process Execution
 
 
 
+## Attack Timeline
 
+The detailed chronological timeline is available in
+[`timeline.md`](timeline.md).
 
