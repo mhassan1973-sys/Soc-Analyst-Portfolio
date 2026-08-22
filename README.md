@@ -28,6 +28,6 @@ Every investigation here follows the same shape a real incident report would: at
 
 ## About me
 
-Aspiring SOC/L1 analyst based in Attocl=k, Pakistan. I run a cyberdefender lab (Sentinel, Defender XDR, Azure Arc) to generate and investigate my own telemetry rather than relying only on pre-built training scenarios — [see it in this repo](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) for an example of that end to end.
+Aspiring SOC/L1 analyst based in Attock, Pakistan. I run a home  lab (Sentinel, Defender XDR, Azure Arc) to generate and investigate my own telemetry rather than relying only on pre-built training scenarios — [see it in this repo](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) for an example of that end to end.
 
 📫 Open to entry-level SOC/L1 opportunities — [LinkedIn](#)
