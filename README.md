@@ -1,13 +1,33 @@
-# Soc-Analyst-Portfolio
+# SOC Analyst Portfolio
 
-Welcome to my SOC Analyst portfolio.
-This repository contains detection engineering case studies, threat hunting queries, investigation workflows, and security research developed while studying Microsoft Defender XDR, Microsoft Sentinel, Splunk, and MITRE ATT&CK.
+Detection engineering case studies and incident investigations built while working toward **SC-200** and **BTL1**, using Microsoft Sentinel, Defender XDR, and Splunk.
 
-## Current Projects
+Every investigation here follows the same shape a real incident report would: attack chain → timeline → query-by-query evidence → root cause → recommendations. Nothing is a walkthrough of someone else's writeup — each one is my own KQL, run against my own data.
+
+## How to read the status labels
+
+- ✅ **Completed Investigation** — full end-to-end analysis: timeline reconstructed, every step backed by a query and evidence, root cause and recommendations included.
+- 🛠️ **Detection Design (Not Yet Validated)** — the detection logic is built and reasoned through, but not yet tested against live telemetry. I label it this way rather than blur the line.
+
+## Investigations
 
 | Category | Project | Status |
-|----------|---------|--------|
-| Discovery | Credential-Based RDP Access → Domain Reconnaissance | Detection Design (Not Yet Validated) |   
-|Reconnaissance,Persistence,Privilege Escalation,Defense Evasion,Credential Access,Lateral Movement,Command and Control | FalconEye — End-to-End Windows Intrusion Investigation | Completed Investigation
-| Device Code Authentication Phishing, Persistence, Privilege Escalation | [Entra ID Guest Privilege Escalation via Dynamic Group Abuse](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) | Completed Investigation |
-  
+|---|---|---|
+| Identity & Access — Device-Code Phishing, Guest Abuse, Privilege Escalation | [**Entra ID Guest Privilege Escalation via Dynamic Group Abuse**](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) — phishing → device-code auth compromise → attacker shapes a guest account's `Country`/`Department` attributes until Entra's dynamic-group engine adds it to a privileged group automatically, 58 seconds later | ✅ Completed |
+| Reconnaissance, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Lateral Movement, C2 | [**FalconEye — End-to-End Windows Intrusion Investigation**](Investigations/) — full multi-stage Windows intrusion, chained from initial access through to command-and-control | ✅ Completed |
+| Discovery | [**Credential-Based RDP Access → Domain Reconnaissance**](Discovery/Credential-Based-RDP-to-Domain-Recon/) — detection logic for domain enumeration following a credentialed RDP session | 🛠️ Detection Design |
+
+## Tools & Techniques
+
+`Microsoft Sentinel` `KQL` `Microsoft Defender XDR` `Splunk` `MITRE ATT&CK` `UnifiedAuditLogs / Entra ID audit analysis` `Azure AD dynamic groups` `Windows intrusion analysis`
+
+## Certifications in progress
+
+- SC-200 — Microsoft Security Operations Analyst
+- BTL1 — Blue Team Level 1
+
+## About me
+
+Aspiring SOC/L1 analyst based in Lahore, Pakistan. I run a home lab (Sentinel, Defender XDR, Azure Arc) to generate and investigate my own telemetry rather than relying only on pre-built training scenarios — [see it in this repo](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) for an example of that end to end.
+
+📫 Open to entry-level SOC/L1 opportunities — [LinkedIn](#)
