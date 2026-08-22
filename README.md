@@ -9,5 +9,5 @@ This repository contains detection engineering case studies, threat hunting quer
 |----------|---------|--------|
 | Discovery | Credential-Based RDP Access → Domain Reconnaissance | Detection Design (Not Yet Validated) |   
 |Reconnaissance,Persistence,Privilege Escalation,Defense Evasion,Credential Access,Lateral Movement,Command and Control | FalconEye — End-to-End Windows Intrusion Investigation | Completed Investigation
-
+| Initial Access, Credential Access, Persistence, Privilege Escalation | [Entra ID Guest Privilege Escalation via Dynamic Group Abuse](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) | Completed Investigation |
   
