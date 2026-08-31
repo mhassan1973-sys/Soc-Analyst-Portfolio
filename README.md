@@ -16,6 +16,7 @@ Every investigation here follows the same shape a real incident report would: at
 | Identity & Access — Device-Code Phishing, Guest Abuse, Privilege Escalation | [**Entra ID Guest Privilege Escalation via Dynamic Group Abuse**](Investigations/Entra-ID-Dynamic-Group-PrivEsc/README.md) — phishing → device-code auth compromise → attacker shapes a guest account's `Country`/`Department` attributes until Entra's dynamic-group engine adds it to a privileged group automatically, 58 seconds later | ✅ Completed |
 | Reconnaissance, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Lateral Movement, C2 | [**FalconEye — End-to-End Windows Intrusion Investigation**](Investigations/) — full multi-stage Windows intrusion, chained from initial access through to command-and-control | ✅ Completed |
 | Discovery | [**Credential-Based RDP Access → Domain Reconnaissance**](Discovery/Credential-Based-RDP-to-Domain-Recon/) — detection logic for domain enumeration following a credentialed RDP session | 🛠️ Detection Design |
+| Supply Chain Compromise, Persistence, Privilege Escalation, Credential Access, Lateral Movement, Impact | [Poisoned PyTorch Dependency — Supply Chain Compromise to Domain-Wide LYNX Ransomware](Investigations/Poisoned-PyTorch-LYNX-Ransomware/README.md) | Completed Investigation |
 
 ## Tools & Techniques
 
