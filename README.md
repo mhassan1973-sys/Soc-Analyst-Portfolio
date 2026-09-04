@@ -17,8 +17,7 @@ Every investigation here follows the same shape a real incident report would: at
 | Reconnaissance, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Lateral Movement, C2 | [**FalconEye — End-to-End Windows Intrusion Investigation**](Investigations/) — full multi-stage Windows intrusion, chained from initial access through to command-and-control | ✅ Completed |
 | Discovery | [**Credential-Based RDP Access → Domain Reconnaissance**](Discovery/Credential-Based-RDP-to-Domain-Recon/) — detection logic for domain enumeration following a credentialed RDP session | 🛠️ Detection Design |
 | Supply Chain Compromise, Persistence, Privilege Escalation, Credential Access, Lateral Movement, Impact | [Poisoned PyTorch Dependency — Supply Chain Compromise to Domain-Wide LYNX Ransomware](Investigations/Poisoned-PyTorch-LYNX-Ransomware/README.md) | Completed Investigation |
-|Reconnaissance, Password Spray, Phishing, Device Code Phishing, Token Abuse, Mailbox Reconnaissance, Persistence, Credential Access, Lateral Movement, Azure Resource Enumeration, Key Vault Access, Secret Exfiltration |[Meridian Health Breach — Password Spray to Key Vault Secret Exfiltration (Phase 1)]([Meridian Health Breach — Device Code Phishing to Key Vault Secret Exfiltration/README.md) 
-
+|Reconnaissance, Password Spray, Phishing, Device Code Phishing, Token Abuse, Mailbox Reconnaissance, Persistence, Credential Access, Lateral Movement, Azure Resource Enumeration, Key Vault Access, Secret Exfiltration |[Meridian Health Breach — Password Spray to Key Vault Secret Exfiltration (Phase 1)](Investigations/Poisoned-PyTorch-LYNX-Ransomware/README.md) | Completed Investigation |
 Device Code Phishing
 
 Token Abuse / FOCI Reuse
