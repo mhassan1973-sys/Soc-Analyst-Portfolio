@@ -20,23 +20,6 @@ Every investigation here follows the same shape a real incident report would: at
 |Reconnaissance, Password Spray, Phishing, Device Code Phishing, Token Abuse, Mailbox Reconnaissance, Persistence, Credential Access, Lateral Movement, Azure Resource Enumeration, Key Vault Access, Secret Exfiltration |[Meridian Health Breach — Password Spray to Key Vault Secret Exfiltration (Phase 1)](Investigations/Poisoned-PyTorch-LYNX-Ransomware/README.md) | Completed Investigation 
 
 
-Token Abuse / FOCI Reuse
-
-Mailbox Reconnaissance
-
-Persistence via Mail Rules
-
-Credential Harvesting
-
-Lateral Movement to Service Accounts
-
-Azure Resource Enumeration
-
-Key Vault Access
-
-Secret Exfiltration
-## Tools & Techniques
-
 `Microsoft Sentinel` `KQL` `Microsoft Defender XDR` `Splunk` `MITRE ATT&CK` `UnifiedAuditLogs / Entra ID audit analysis` `Azure AD dynamic groups` `Windows intrusion analysis`
 
 ## Certifications in progress
